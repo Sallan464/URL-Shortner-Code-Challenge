@@ -44,7 +44,7 @@ def home():
     if request.method == "POST":
         #get the input url
         long_url = request.form['long_url']
-        print(long_url)
+        
         #see if it is in the database already
         current_url = Good_urls.query.filter(Good_urls.orig_url == long_url).all()
 
@@ -60,15 +60,15 @@ def home():
             db.session.add(new_obj)
             db.session.commit()
             #return the shorter URL
-            return render_template('newurl.html', new_url=long_url)
+            return render_template('newurl.html', new_url=url_extension)
     else:
         return render_template('home.html')
 
 @app.route('/<short_url>')
 def check_url(short_url):
-    og_url = Good_urls.query.filter_by(short_url = short_url).all()
+    og_url = Good_urls.query.filter(Good_urls.short_url == short_url).all()
     if og_url:
-        return redirect(og_url.orig_url)
+        return redirect(og_url[0].orig_url)
     else: 
         return f"<h1>No such URL pal - maybe you need to try again?</h1>"
 
