@@ -49,9 +49,8 @@ def home():
         current_url = Good_urls.query.filter(Good_urls.orig_url == long_url).all()
 
         if current_url:
-            print(current_url)
             #return the already shortended one if it is
-            return f"{current_url[0].short_url}"
+            return render_template('newurl.html', new_url = current_url[0].short_url)
         else: 
             #create short url
             url_extension = make_it_shorter()
@@ -61,12 +60,12 @@ def home():
             db.session.add(new_obj)
             db.session.commit()
             #return the shorter URL
-            return long_url
+            return render_template('newurl.html', new_url=long_url)
     else:
         return render_template('home.html')
 
-@app.route('/<code>')
-def redirect(short_url):
+@app.route('/<short_url>')
+def check_url(short_url):
     og_url = Good_urls.query.filter_by(short_url = short_url).all()
     if og_url:
         return redirect(og_url.orig_url)
