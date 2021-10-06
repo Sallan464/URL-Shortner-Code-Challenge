@@ -50,7 +50,8 @@ def home():
 
         if current_url:
             #return the already shortended one if it is
-            return render_template('newurl.html', new_url = current_url[0].short_url)
+            url = 'http://localhost:5000/'+ current_url[0].short_url
+            return render_template('newurl.html', new_url = url)
         else: 
             #create short url
             url_extension = make_it_shorter()
@@ -59,8 +60,10 @@ def home():
             #add them into thedata base
             db.session.add(new_obj)
             db.session.commit()
+            url = 'http://localhost:5000/'+ url_extension
+            
             #return the shorter URL
-            return render_template('newurl.html', new_url=url_extension)
+            return render_template('newurl.html', new_url=url)
     else:
         return render_template('home.html')
 
