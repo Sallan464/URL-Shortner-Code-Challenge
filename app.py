@@ -6,8 +6,6 @@ from flask_sqlalchemy import SQLAlchemy
 import string
 import random
 
-
-
 app = Flask(__name__)
 CORS(app)
 
@@ -15,8 +13,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///urls.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
-
-
 class Good_urls(db.Model):
     id_ = db.Column("id_", db.Integer, primary_key=True)
     orig_url = db.Column("orig_url", db.String())
@@ -37,7 +33,6 @@ def make_it_shorter():
             return url_letters
 
 db.create_all()
-
 
 @app.route('/', methods = ['POST', 'GET'])
 def home():
