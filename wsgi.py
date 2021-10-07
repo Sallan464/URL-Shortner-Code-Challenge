@@ -1,5 +1,5 @@
 from app import app
-from waitress import serve 
 
-# app.run(app)
-serve(app)
+app.run()
+# if __name__ == "__main__"
+
