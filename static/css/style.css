@@ -15,12 +15,22 @@ html {
   
   a.navbar-brand {
     color: white !important;
+    font-size: xx-large;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   
   .container {
     padding: 20px;
     max-width: 50%;
     text-align: center;
+  }
+
+  .form-container {
+      display: flex;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
   }
   
   input {
