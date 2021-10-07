@@ -1,0 +1,59 @@
+html {
+    background: #12c2e9;
+    background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+  }
+  
+  body {
+    background-color: transparent !important;
+    color: white;
+  }
+  
+  .navbar-light {
+    background-color: rgba(255,255,255,0.2) !important;
+  }
+  
+  a.navbar-brand {
+    color: white !important;
+  }
+  
+  .container {
+    padding: 20px;
+    max-width: 50%;
+    text-align: center;
+  }
+  
+  input {
+    border-radius: 15px !important;
+    border: none !important;
+    text-align: center;
+  }
+  
+  input:focus {
+    outline: none !important;
+    text-align: center;
+  }
+  
+/*   
+  .btn {
+    border-radius: 10px !important;
+    box-shadow: 4px 4px 4px black;
+    transition: box-shadow 0.5s, transform 0.5s;
+    transform: initial;
+  }
+  
+  .btn:hover {
+    box-shadow: initial;
+    transition: box-shadow 0.5s, transform 0.5s;
+    transform: scale(1.1,1.1);
+  } */
+  
+  hr {
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    border-top: 2px solid rgba(0,0,0,0.1)
+  }
+  
+  /* #copy {
+    margin-left: 20px;
+  } */
