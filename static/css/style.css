@@ -33,6 +33,13 @@ html {
       padding: 20px;
   }
 
+  #text {
+      color: black;
+      text-align: center;
+      margin: auto;
+      padding-left: 10px;
+  }
+
   .col-25 {
     float: left;
     width: 25%;
@@ -40,9 +47,14 @@ html {
   }
   
   .col-75 {
+    display: flex;
     float: left;
     width: 75%;
     margin-top: 6px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: flex-start
   }
   
   input {
@@ -56,6 +68,33 @@ html {
     text-align: center;
   }
 
+  input[type=url] {
+    width: 100%;
+    margin-left: 30px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  input[type=submit] {
+    display: flex;
+    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  input[type=submit]:hover {
+    background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+    transition: box-shadow 0.5s, transform 0.5s;
+    transform: scale(1.1,1.1);
+  }
+
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
     .col-25, .col-75, input[type=submit] {
@@ -64,26 +103,15 @@ html {
     }
   }
 
-/*   
-  .btn {
-    border-radius: 10px !important;
-    box-shadow: 4px 4px 4px black;
-    transition: box-shadow 0.5s, transform 0.5s;
-    transform: initial;
+  #btn.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    align-content: center;
+    justify-content: flex-end;
   }
-  
-  .btn:hover {
-    box-shadow: initial;
-    transition: box-shadow 0.5s, transform 0.5s;
-    transform: scale(1.1,1.1);
-  } */
-  
-  hr {
-    margin-top: 1.2rem;
-    margin-bottom: 1.2rem;
-    border-top: 2px solid rgba(0,0,0,0.1)
-  }
-  
+
   /* #copy {
     margin-left: 20px;
   } */
